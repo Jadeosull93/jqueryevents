@@ -5,60 +5,59 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-    if (lockBoard) return;
-    if (this === firstCard) return;
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
     firstCard = this;
-  } return {
-    // second click
-    hasFlippedCard = false;
-    secondCard = this;
 
-    
-    }
+    return;
   }
 
+  // second click
+  secondCard = this;
 
-function checkForMatch () {
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
-    
-    isMatch ? disableCards() : unFlipCards();
-     
+  checkForMatch();
 }
 
-function disableCards (){
-      firstCard.removeEventListener('click', flipCard);
-      secondCard.removeEventListener('click', flipCard);
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-      resetBoard();
+  isMatch ? disableCards() : unflipCards();
 }
 
-function unFlipCards() {
-    lockBoard = true;
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
 
-    setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
+  resetBoard();
+}
 
-        resetBoard();
-      }, 1500);
+function unflipCards() {
+  lockBoard = true;
 
-      lockBoard = false;
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    resetBoard();
+  }, 1500);
 }
 
 function resetBoard() {
-    [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null]
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
 }
 
 (function shuffle() {
-    cards.forEach( card => {
-        let randomPos = Math.floor(Math.random() * 12);
-        card.style.order = randomPos;
-    })
-})()
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})();
+
 cards.forEach(card => card.addEventListener('click', flipCard));
