@@ -97,3 +97,29 @@ body {
 button {
     background-color: #f065fc;
 }  
+
+banner .navbar-brand {
+  font-family: 'Homemade Apple', cursive;
+  color: 	#FFB6C1;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-left: 5%;
+}
+
+.banner .navbar {
+  margin-top: 2%;
+
+}
+
+.banner .nav{
+  margin-right:5% ;
+}
+
+a{
+color: 	#FFB6C1;
+font-size: 1.2em;
+}
+
+a:hover{
+  color:#fff;
+}
