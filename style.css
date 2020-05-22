@@ -66,7 +66,6 @@ body {
 .welcome-box {
     width: 75%;
     max-width: 600px;
-    margin-top: 400px;
     background: #f1f1f1;
     position: relative;
     top: 50%;
@@ -87,3 +86,14 @@ body {
     color: blueviolet;
     font-weight: 300;
 }
+
+.content {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  }
+
+button {
+    background-color: #f065fc;
+}  
