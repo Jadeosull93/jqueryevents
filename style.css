@@ -136,3 +136,8 @@ font-size: 1.2em;
 a:hover{
   color:#fff;
 }
+
+.timer {
+	display: inline-block;
+	margin: 0 1rem;
+}
