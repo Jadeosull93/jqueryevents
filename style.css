@@ -1,4 +1,11 @@
+h1 {
+    text-align:center;
+}
 
+body {
+    background-image: url('memphis-mini.png');
+    background-size: cover;
+}
 .memory-game {
     width: 640px;
   height: 640px;
@@ -9,8 +16,9 @@
   perspective: 1000px;
 }
 
-
-.game-board {}
+.center {
+    text-align: center;
+}
 
 .memory-card {
    width: calc(25% - 10px);
@@ -74,6 +82,7 @@ nav {
     text-align: center;
     box-shadow: 0 0 20px #000000b3;
     font-family: "Oswald", sans-serif;
+    margin-top: 25%;
 }
 
 .welcome-txt {
@@ -84,12 +93,7 @@ nav {
     font-weight: 300;
 }
 
-.content {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  }
+
 
 .btn{
     background-color: #f065fc;
